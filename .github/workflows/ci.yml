@@ -1,0 +1,27 @@
+name: CI for HTML Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Check HTML file exists
+        run: |
+          if [ -f index.html ]; then
+            echo "HTML file exists ✅"
+          else
+            echo "HTML file missing ❌"
+            exit 1
+          fi
+
+      - name: List Files
+        run: ls
+Thinklab - Rajat's Cloud & AI Session
