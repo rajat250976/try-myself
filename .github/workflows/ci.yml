@@ -3,7 +3,7 @@ name: CI for HTML Project
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   check:
